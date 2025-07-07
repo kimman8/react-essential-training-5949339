@@ -1,4 +1,4 @@
-import "./App.css";
+import './App.css';
 
 function Header({ name, year }) {
   return (
@@ -8,14 +8,25 @@ function Header({ name, year }) {
     </header>
   );
 }
+const items = ['hi', 'bye', 'yes'];
+
+function Main({ dishes }) {
+  return (
+    <main>
+      <ul>
+        {dishes.map((dish) => (
+          <li style={{ listStyleType: 'none' }}>{dish}</li>
+        ))}
+      </ul>
+    </main>
+  );
+}
 
 function App() {
   return (
     <div>
       <Header name="Alex" year={new Date().getFullYear()} />
-      <main>
-        <h2>We serve the most delicious food around</h2>
-      </main>
+      <Main dishes={items} />
     </div>
   );
 }
